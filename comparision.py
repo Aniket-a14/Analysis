@@ -5,7 +5,7 @@ import seaborn as sns
 df = pd.read_csv("S&P 500 Stock Prices 2014-2017.csv")
 df['date'] = pd.to_datetime(df['date'])
 
-# We check correlation between trading volume and closing price
+# Here we check correlation between trading volume and closing price
 correlation = df[['volume', 'close']].corr().iloc[0, 1]
 print(f"Correlation between volume and closing price: {correlation:.2f}")
 

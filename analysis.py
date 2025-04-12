@@ -7,22 +7,18 @@ import seaborn as sns
 df = pd.read_csv("S&P 500 Stock Prices 2014-2017.csv")
 df['date'] = pd.to_datetime(df['date'])
 
-# Print basic details to understand what kind of data we are working with.
+
 print(df.head())
 print("\nColumn Names:")
 print(df.columns)
 print("\nMissing Values:")
 print(df.isnull().sum())
-
-# Show some basic stats like mean, min, max, etc.
 print("\nDescriptive Statistics:")
 print(df.describe())
-
-# Display how many unique companies are there and show a few sample names.
 print(f"\nTotal unique companies: {df['symbol'].nunique()}")
 print("Sample Ticker Symbols:", df['symbol'].unique()[:5])
 
-# Get the Apple (AAPL) data separately for time-series plotting.
+
 sample = df[df['symbol'] == 'AAPL']
 
 # Find the top 5 most frequent companies in the dataset for comparison in volume.

@@ -9,9 +9,8 @@ df['date'] = pd.to_datetime(df['date'])
 price_change = df.sort_values('date').groupby('symbol')['close'].agg(['first', 'last'])
 price_change['percent_change'] = ((price_change['last'] - price_change['first']) / price_change['first']) * 100
 
-# Top 10 gainers
+
 top_gainers = price_change.sort_values('percent_change', ascending=False).head(10)
-# Top 10 losers
 top_losers = price_change.sort_values('percent_change').head(10)
 
 plt.figure(figsize=(12,6))
