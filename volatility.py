@@ -8,7 +8,7 @@ df['date'] = pd.to_datetime(df['date'])
 volatility_df = df.groupby('symbol')['close'].std().sort_values(ascending=False).head(10)
 
 plt.figure(figsize=(12,6))
-sns.barplot(x=volatility_df.index, y=volatility_df.values, palette="Set1", hue=volatility_df.index)
+sns.barplot(x=volatility_df.index, y=volatility_df.values, palette="Set1", hue=volatility_df.index, legend=False)
 plt.title("Top 10 Most Volatile Stocks (2014–2017)")
 plt.xlabel("Company Symbol")
 plt.ylabel("Price Standard Deviation")
