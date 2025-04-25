@@ -14,7 +14,7 @@ top_gainers = price_change.sort_values('percent_change', ascending=False).head(1
 top_losers = price_change.sort_values('percent_change').head(10)
 
 plt.figure(figsize=(12,6))
-sns.barplot(x=top_gainers.index, y=top_gainers['percent_change'], palette="Greens")
+sns.barplot(x=top_gainers.index, y=top_gainers['percent_change'], palette="Greens",hue=top_gainers.index)
 plt.title("Top 10 Gainers (2014–2017)")
 plt.ylabel("Percentage Gain")
 plt.xlabel("Company Symbol")
@@ -22,7 +22,7 @@ plt.tight_layout()
 plt.show()
 
 plt.figure(figsize=(12,6))
-sns.barplot(x=top_losers.index, y=top_losers['percent_change'], palette="Reds")
+sns.barplot(x=top_losers.index, y=top_losers['percent_change'], palette="Reds",hue=top_losers.index)
 plt.title("Top 10 Losers (2014–2017)")
 plt.ylabel("Percentage Loss")
 plt.xlabel("Company Symbol")
