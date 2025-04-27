@@ -15,7 +15,9 @@ print("Hypothesis Test: AAPL 2014 vs 2017 Closing Prices")
 print(f"T-statistic: {t_stat:.4f}")
 print(f"P-value: {p_value:.4f}")
 
-if p_value < 0.05:
+a=0.05
+
+if p_value < a:
     print("Conclusion: Closing price changed significantly between 2014 and 2017.")
 else:
     print("Conclusion: No significant difference in closing price between 2014 and 2017.")
