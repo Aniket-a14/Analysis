@@ -14,7 +14,7 @@ pivot_df = filtered_df.pivot(index='date', columns='symbol', values='close')
 pivot_df.dropna(inplace=True)
 corr = pivot_df.corr()
 
-# Plot heatmap
+#Plot Heatmap
 plt.figure(figsize=(10, 8))
 sns.heatmap(corr, annot=True, cmap='coolwarm')
 plt.title("Correlation of Closing Prices (Top 10 Companies)")
