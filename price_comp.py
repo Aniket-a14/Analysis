@@ -9,7 +9,6 @@ df['year'] = df['date'].dt.year
 selected_symbols = ['AAPL', 'MSFT', 'AMZN', 'GOOG', 'TSLA']
 filtered_df = df[df['symbol'].isin(selected_symbols)]
 
-
 avg_yearly_price = filtered_df.groupby(['year', 'symbol'])['close'].mean().reset_index()
 
 plt.figure(figsize=(14,7))
